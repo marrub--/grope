@@ -210,7 +210,7 @@ impl Stuff
          for b in &d_i32b(self.p.0) {c.dat.push(*b)}
          for b in &d_i32b(self.p.1) {c.dat.push(*b)}
          if let Some(n) = png.find_chunk(*b"grAb") {png.chnk[n] = c}
-         else                                      {png.chnk[1] = c}
+         else                                      {png.chnk.insert(1, c)}
          png.write(&mut File::create(fname)?)?;
          Ok(())
       }
