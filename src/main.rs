@@ -85,6 +85,10 @@ fn draw(c: &cairo::Context, v: &mut Stuff) -> Inhibit
    c.move_to(-VW, 0.0); c.line_to( VW, 0.0); c.stroke();
    c.move_to(0.0, -VH); c.line_to(0.0,  VH); c.stroke();
 
+   // center (hud)
+   c.move_to(0.0,  HH); c.line_to(VW, HH); c.stroke();
+   c.move_to( HW, 0.0); c.line_to(HW, VH); c.stroke();
+
    // hud borders
    c.move_to(0.0,  VH); c.line_to(VW, VH); c.stroke();
    c.move_to( VW, 0.0); c.line_to(VW, VH); c.stroke();
